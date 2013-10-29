@@ -1,6 +1,10 @@
 ﻿地球拼音・音標
 Terra_IPA ReadMe
-v0.8
+v0.9
+
+v0.9更新：
+1.支持Rime最新功能，如繁簡快捷切換等
+2.黙認字体設定為meiryo
 
 v0.8更新：
 1. 新增模糊音gn=ng, au=ao, ung=ong等

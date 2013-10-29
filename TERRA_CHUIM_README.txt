@@ -1,6 +1,10 @@
 ﻿地球拼音・註音
 Terra_Chuim ReadMe
-v0.6
+v0.7
+
+v0.7更新：
+1.支持Rime最新功能，如繁簡快捷切換等
+2.黙認字体設定為meiryo
 
 v0.6更新：
 1. 新增模糊音au=ao, ung=ong等

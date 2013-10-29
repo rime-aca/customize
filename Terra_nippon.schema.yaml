@@ -2,9 +2,9 @@
 # encoding: utf-8
 
 schema:
-  schema_id: Terra_Nippon
-  name: 地球拼音・日本新字形 ₀.₇₁
-  version: "0.71"
+  schema_id: terra_nippon
+  name: 地球拼音・日本新字形 ₀.₈
+  version: "0.8"
   author:
     - Patrick <ipatrickmac@gmail.com>
   description: |
@@ -14,6 +14,7 @@ schema:
     提示碼c在a, u之歬顯示爲ç
     兼容au=ao, ung=ong, ui=ei(nl後)
     支持0.9.20之後rime的symbols
+    支持Ctrl+Shift+4在傳統與日本用字間快速切換
 
 switches:
 switches:
@@ -171,7 +172,8 @@ key_binder:
     - { when: has_menu, accept: minus, send: minus }
     - { when: has_menu, accept: equal, send: equal }
     - { when: has_menu, accept: period, send: period }
-    - {accept: "Control+Shift+4", toggle: nippon, when: always}
+    - { when: always, accept: Control+Shift+4, toggle: nippon }
+    - { when: always, accept: Control+Shift+dollar, toggle: nippon }
 
 recognizer:
   import_preset: default

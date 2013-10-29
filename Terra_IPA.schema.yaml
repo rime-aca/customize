@@ -5,7 +5,7 @@
 
 schema:
   name: "地球拼音・音標 ₀.₉"
-  version: 0.9
+  version: 0.91
   schema_id: Terra_IPA
   author:
     - "Patrick <ipatrickmac@gmail.com>"
@@ -259,3 +259,6 @@ recognizer:
   patterns:
     reverse_lookup: "`[a-z]*'?$"
     punct: '^/[a-z]*$'
+
+style:
+  font_face: "Meiryo"

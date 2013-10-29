@@ -3,8 +3,8 @@
 
 schema:
   schema_id: terra_custom
-  name: 地球拼音・自分流 ₀.₇₁
-  version: "0.71"
+  name: 地球拼音・自分流 ₀.₈
+  version: "0.8"
   author:
     - Patrick <ipatrickmac@gmail.com>
   description: |
@@ -14,14 +14,17 @@ schema:
     提示碼c在a, u之歬顯示爲ç
     兼容au=ao, ung=ong, ui=ei(nl後)
     支持0.9.20之後rime的symbols
+    支持Ctrl+Shift+4用字標準快速切換
 
 switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
   - name: custom
     states: [ 傳統, 我流 ]
     reset: 1
-    # 啓用opencc字形轉換
-  - name: full_shape
-    states: [ 半角, 全角 ]
 
 engine:
   processors:
@@ -186,6 +189,8 @@ key_binder:
     - { when: has_menu, accept: equal, send: equal }
     - { when: has_menu, accept: period, send: period }
     #- { when: composing, accept: Return, send: Shift+Return }
+    - { when: always, accept: Control+Shift+4, toggle: custom }
+    - { when: always, accept: Control+Shift+dollar, toggle: custom }
 
 recognizer:
   import_preset: default
@@ -196,3 +201,6 @@ recognizer:
 abc_segmentor:
   extra_tags:
     - reverse_lookup
+
+style:
+  font_face: "Meiryo"

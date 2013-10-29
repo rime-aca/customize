@@ -4,9 +4,9 @@
 # encoding: utf-8
 
 schema:
-  schema_id: Terra_Chuim
-  name: "地球拼音・註音 ₀.₆₂"
-  version: "0.62"
+  schema_id: terra_chuim
+  name: "地球拼音・註音 ₀.₇"
+  version: "0.7"
   author:
     - Patrick <ipatrickmac@gmail.com>
   description:
@@ -211,4 +211,4 @@ recognizer:
     punct: '^/[a-z]*$'
 
 style:
-  font_face: "Sin Mienglan"
+  font_face: "Meiryo"

@@ -5,6 +5,8 @@ v0.6更新內容
 1.dzing_variants改爲單項替換
 2.調整nippon_variants用字標準
 3.Terra_TR更名爲terra_custom
+4.地球拼音各派生方案，支持用字標準快捷切換
+5.黙認字體設置爲meiryo
 
 v0.5更新內容：
 1.整合dzing_variants（絕對文藝正字，雙向替換，由叔寍整理），相比custom_variants替換條目㪅多（初心者愼用）

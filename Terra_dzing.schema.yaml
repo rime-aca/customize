@@ -3,8 +3,8 @@
 
 schema:
   schema_id: Terra_dzing
-  name: 墬球拼音・靖 ₀.₁₁
-  version: "0.11"
+  name: 墬球拼音・靖 ₀.₂
+  version: "0.2"
   author:
     - Patrick <ipatrickmac@gmail.com>
   description: |
@@ -14,14 +14,17 @@ schema:
     提示碼c在a, u之歬顯示爲ç
     兼容au=ao, ung=ong, ui=ei(nl後)
     支持0.9.20之後rime的symbols
+    支持Ctrl+Shift+4用字標準快速切換
 
 switches:
-  - name: dzing
-    states: [ 傳統,  靖]
-    reset: 1
-    # 啓用opencc字形轉換
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
+  - name: custom
+    states: [ 傳統, 靖 ]
+    reset: 1
 
 engine:
   processors:
@@ -180,3 +183,6 @@ recognizer:
 abc_segmentor:
   extra_tags:
     - reverse_lookup
+
+style:
+  font_face: "Meiryo"
