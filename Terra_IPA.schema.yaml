@@ -5,8 +5,8 @@
 
 schema:
   name: "地球拼音・音標 ₀.₉"
-  version: 0.91
-  schema_id: Terra_IPA
+  version: 0.92
+  schema_id: terra_ipa
   author:
     - "Patrick <ipatrickmac@gmail.com>"
   description:

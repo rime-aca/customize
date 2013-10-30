@@ -173,6 +173,8 @@ key_binder:
     - { when: has_menu, accept: equal, send: equal }
     - { when: has_menu, accept: period, send: period }
     #- { when: composing, accept: Return, send: Shift+Return }
+    - { when: always, accept: Control+Shift+4, toggle: dzing }
+    - { when: always, accept: Control+Shift+dollar, toggle: dzing }
 
 recognizer:
   import_preset: default
