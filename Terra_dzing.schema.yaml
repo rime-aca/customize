@@ -22,7 +22,7 @@ switches:
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: custom
+  - name: dzing
     states: [ 傳統, 靖 ]
     reset: 1
 
