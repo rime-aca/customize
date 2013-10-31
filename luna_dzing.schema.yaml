@@ -11,6 +11,8 @@ schema:
   description: |
     基於朙月拼音改造而成旳方案。
     默認使用叔寍正字。
+    標點默認使用symbols
+    支持Ctrl+Shift+4用字標準快速切換
     本方案需要配套使用dzing.ini及dzing_variants.txt
     請將上述文件寘於「程序文件夾\data\opencc」下即可
   dependencies:
@@ -96,7 +98,7 @@ reverse_lookup:
     - xform/([nl])v/$1ü/
 
 punctuator:
-  import_preset: default
+  import_preset: symbols
 
 key_binder:
   import_preset: default
@@ -108,6 +110,7 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "`[a-z]*'?$"
+    punct: '^/[a-z]*$'
 
 simplifier:
   opencc_config: dzing.ini
