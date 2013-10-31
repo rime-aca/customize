@@ -4,7 +4,7 @@ CUSTOMIZE
   著重介紹如何自定義「偏好用字」。
 
 ========
-{{自定義偏好用字 v0.7}}
+自定義偏好用字 v0.7
 
  - V0.7更新內容
 
@@ -32,7 +32,7 @@ CUSTOMIZE
 
 	3. custom_variants增刪若干條目
 
-	4. Terra_Nippon.schema.yaml㪅新至0.7版，修正因Rime㪅新後「-」不能用來輸入聲調㞢bug
+	4. Terra_Nippon.schema㪅新至0.7版，修正因Rime㪅新後「-」不能用來輸入聲調之bug
 
  - v0.4更新內容：
 
