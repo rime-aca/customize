@@ -12,6 +12,8 @@ CUSTOMIZE
 	
 	2. 修正其他現有方案若干bug，竝將方案id統一改爲小寫
 
+	3. terra_nippon更新至0.9，移除個人偏好設置，以適用於更多用戶
+
  - v0.6更新內容
 
 	1. dzing_variants改爲單項替換
@@ -59,7 +61,7 @@ CUSTOMIZE
 ========
 使用方㳒：
 ========
-1. 
+1. 	
 	將custom.ini與custom_variants.txt放入：程序文件夾\data\opencc
 
 	以windows 7 64bit爲例 
@@ -68,7 +70,7 @@ CUSTOMIZE
 
 	方案文件則放入用戶文件夾（卽%appdata%\rime）中
 
-2. 
+2. 	
 	打開要進行偏好用字替換旳方案
 
 	如：luna_pinyin.schema.yaml
@@ -104,5 +106,5 @@ CUSTOMIZE
 ========
 註：
 ========
-1. 如需字形添加詞條，可手動編輯xxxx_variants.txt
-2. 丄述文件中不可出現空行
+	1. 如需自行添加詞條，可手動編輯xxxx_variants.txt
+	2. 丄述文件中不可出現空行

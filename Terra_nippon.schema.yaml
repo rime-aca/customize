@@ -3,20 +3,18 @@
 
 schema:
   schema_id: terra_nippon
-  name: 地球拼音・日本新字形 ₀.₈
-  version: "0.8"
+  name: 地球拼音・日本新字形 ₀.₉
+  version: "0.9"
   author:
-    - Patrick <ipatrickmac@gmail.com>
+    - Patrick <ipatrickmac@me.com>
   description: |
     由地球拼音改造而成的拼音輸入方案
-    詞庫及聲調輸入方法與地球拼音相同
     默認字形替換爲「日本」
-    提示碼c在a, u之歬顯示爲ç
-    兼容au=ao, ung=ong, ui=ei(nl後)
-    支持0.9.20之後rime的symbols
-    支持Ctrl+Shift+4在傳統與日本用字間快速切換
+    標點默認使用symbols
+    支持Ctrl+Shift+4用字標準快速切換
+    本方案需要配套使用nippon.ini及nippon_variants.txt
+    請將上述文件置於「程序文件夾\data\opencc」下即可
 
-switches:
 switches:
   - name: ascii_mode
     reset: 0
@@ -37,7 +35,7 @@ engine:
     - selector
     - navigator
     - express_editor
-    - fluency_editor
+    - fluency_editor	#若要空格上屛可註銷此行
   segmentors:
     - ascii_segmentor
     - matcher
@@ -46,9 +44,8 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - r10n_translator
-    #- echo_translator
     - reverse_lookup_translator
+    - script_translator
   filters:
     - simplifier
     - uniquifier
@@ -68,12 +65,9 @@ speller:
     - derive/ui/uei/
     - derive/iu/iou/
     - derive/ao/oa/
-    - derive/ao/au/
-    - derive/ong/ung/
-    - derive/([nl])ei/$1ui/
     - derive/([aeiou])ng/$1gn/
     - derive/([iu])a(o|ng?)/a$1$2/
-    - derive/^([a-z]+)\d$/$1/
+    - derive/^([a-z]+)[0-5]$/$1/
     - derive/([dtngkhrzcs])o(u|ng)$/$1o/
     - derive/ong$/on/
     - 'erase/^.*5$/'
@@ -84,11 +78,14 @@ speller:
 
 translator:
   dictionary: terra_pinyin
-  spelling_hints: 9
+  spelling_hints: 5  # 〜字以內候選標註完整帶調拼音
   preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+    - xform/eh/ê/
     - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
     - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
-    - 'xform c([aou]) ç$1'
     - 'xform a[-;] ā'
     - 'xform a/ á'
     - 'xform a[<,] ǎ'
@@ -109,12 +106,10 @@ translator:
     - 'xform u/ ú'
     - 'xform u[<,] ǔ'
     - 'xform u[>\\] ù'
-    - 'xform v[-;] ǖ'
-    - 'xform v/ ǘ'
-    - 'xform v[<,] ǚ'
-    - 'xform v[>\\] ǜ'
-    - xform/([nljqxy])v/$1ü/
-    - xform/eh\d?/ê/
+    - 'xform ü[-;] ǖ'
+    - 'xform ü/ ǘ'
+    - 'xform ü[<,] ǚ'
+    - 'xform ü[>\\] ǜ'
   comment_format:
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
@@ -143,22 +138,47 @@ translator:
     - xform v3 ǚ
     - xform v4 ǜ
     - xform/([nljqxy])v/$1ü/
-    - xform/eh\d?/ê/
-    - xform/([a-z]+)\d/$1/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
 
 reverse_lookup:
-  dictionary: luna_pinyin
+  dictionary: stroke
   enable_completion: true
   prefix: "`"
-  tips: 〔朙月拼音〕
+  suffix: "'"
+  tips: 〔筆畫〕
   preedit_format:
-    - xform/([nljqxy])v/$1ü/
+    - xlit/hspnz/一丨丿丶乙/
   comment_format:
-    - "xlit|zyxwvutsrqponmlkjihgfedcba01234|"
-
-simplifier:
-  opencc_config: nippon.ini
-  option_name: nippon
+    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
+    - xform ([aeo])([iuo])([1234]) $1$3$2
+    - xform a1 ā
+    - xform a2 á
+    - xform a3 ǎ
+    - xform a4 à
+    - xform e1 ē
+    - xform e2 é
+    - xform e3 ě
+    - xform e4 è
+    - xform o1 ō
+    - xform o2 ó
+    - xform o3 ǒ
+    - xform o4 ò
+    - xform i1 ī
+    - xform i2 í
+    - xform i3 ǐ
+    - xform i4 ì
+    - xform u1 ū
+    - xform u2 ú
+    - xform u3 ǔ
+    - xform u4 ù
+    - xform v1 ǖ
+    - xform v2 ǘ
+    - xform v3 ǚ
+    - xform v4 ǜ
+    - xform/([nljqxy])v/$1ü/
+    - xform/eh[0-5]?/ê/
+    - xform/([a-z]+)[0-5]/$1/
 
 punctuator:
   import_preset: symbols
@@ -180,3 +200,8 @@ recognizer:
   patterns:
     reverse_lookup: "`[a-z]*'?$"
     punct: '^/[a-z]*$'
+
+simplifier:
+  opencc_config: nippon.ini
+  option_name: nippon
+  tip: all
