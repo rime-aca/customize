@@ -26,7 +26,7 @@ CUSTOMIZE
 
  - v0.5更新內容：
 
-	1. 整合dzing_variants（絕對文藝正字，雙向替換，由叔寍整理），相比custom_variants替換條目㪅多（初心者愼用）
+	1. 整合dzing_variants（文藝正字，雙向替換，由叔寍整理），相比custom_variants替換條目㪅多（初心者愼用）
 
 	2. 修正nippon_variants中个別橆理簡化/代用字，如「芸」
 
