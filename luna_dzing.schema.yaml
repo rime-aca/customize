@@ -3,8 +3,8 @@
 
 schema:
   schema_id: luna_dzing
-  name: 朙月拼音・靖
-  version: "0.1"
+  name: 朙月拼音・靖₀.₁₁
+  version: "0.11"
   author:
     - Patrick <ipatrickmac@me.com>
     - 佛振 <chen.sst@gmail.com>
@@ -23,7 +23,7 @@ switches:
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: dzing
-    states: [ 漢字, 靖 ]
+    states: [ 傳統, 靖 ]
     reset: 1
 
 engine:
@@ -100,6 +100,9 @@ punctuator:
 
 key_binder:
   import_preset: default
+  bindings:
+    - { when: always, accept: Control+Shift+4, toggle: dzing }
+    - { when: always, accept: Control+Shift+dollar, toggle: dzing }
 
 recognizer:
   import_preset: default
