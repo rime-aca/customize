@@ -39,6 +39,7 @@ engine:
     - selector
     - navigator
     - express_editor
+    - fluency_editor	#若要空格上屛可註銷此行
   segmentors:
     - ascii_segmentor
     - matcher
