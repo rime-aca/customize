@@ -4,41 +4,41 @@
   著重介紹如何自定義「偏好用字」。
 
 ========
-[自定義偏好用字 v0.7]
+[[自定義偏好用字 v0.7]]
 
  - V0.7更新內容
 
-	1.新增terra_dzing及luna_dzing方案（基於明月、墬球拼音改造而成）
+	1. 新增terra_dzing及luna_dzing方案（基於明月、墬球拼音改造而成）
 	
-	2.修正其他現有方案若干bug，竝將方案id統一改爲小寫
+	2. 修正其他現有方案若干bug，竝將方案id統一改爲小寫
 
  - v0.6更新內容
 
-	1.dzing_variants改爲單項替換
+	1. dzing_variants改爲單項替換
 
-	2.調整nippon_variants用字標準
+	2. 調整nippon_variants用字標準
 
-	3.Terra_TR更名爲terra_custom
+	3. Terra_TR更名爲terra_custom
 
-	4.地球拼音各派生方案，支持用字標準快捷切換
+	4. 地球拼音各派生方案，支持用字標準快捷切換
 
-	5.黙認字體設置爲meiryo
+	5. 黙認字體設置爲meiryo
 
  - v0.5更新內容：
 
-	1.整合dzing_variants（絕對文藝正字，雙向替換，由叔寍整理），相比custom_variants替換條目㪅多（初心者愼用）
+	1. 整合dzing_variants（絕對文藝正字，雙向替換，由叔寍整理），相比custom_variants替換條目㪅多（初心者愼用）
 
-	2.修正nippon_variants中个別橆理簡化/代用字，如「芸」
+	2. 修正nippon_variants中个別橆理簡化/代用字，如「芸」
 
-	3.custom_variants增刪若干條目
+	3. custom_variants增刪若干條目
 
-	4.Terra_Nippon.schema.yaml㪅新至0.7版，修正因Rime㪅新後「-」不能用來輸入聲調㞢bug
+	4. Terra_Nippon.schema.yaml㪅新至0.7版，修正因Rime㪅新後「-」不能用來輸入聲調㞢bug
 
  - v0.4更新內容：
 
-	1.新增若干日本類推簡化字
+	1. 新增若干日本類推簡化字
 
-	2.custom替換列表中新增若干正字
+	2. custom替換列表中新增若干正字
 
  - v0.3更新內容：
 
