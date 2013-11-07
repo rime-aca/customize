@@ -4,7 +4,15 @@ CUSTOMIZE
   著重介紹如何自定義「偏好用字」。
 
 ========
-自定義偏好用字 v0.7
+自定義偏好用字 v0.8
+
+ - V0.8更新內容
+
+	1. dzing_variants與nippon_variants採用瑾昀開發的新語法，替換後原字不消失
+	
+	2. 日本字表默認註銷掉Ext-B區以後的字符
+
+	3. 精簡custom_variants
 
  - V0.7更新內容
 
@@ -56,7 +64,7 @@ CUSTOMIZE
 
 	2. 新增「地球拼音・日本新字形」方案，參照如丅方㳒配合nippon.ini及nippon_variants.txt使用
 
-	3. 對使用方㳒進行
+	3. 對使用方㳒進行說明
 
 ========
 使用方㳒：
