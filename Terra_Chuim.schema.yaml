@@ -1,14 +1,16 @@
-﻿# Terra_Chuim.schema.yaml
+# Terra_Chuim.schema.yaml
 # Rime schema
 # vim: set sw=2 sts=2 et:
 # encoding: utf-8
 
 schema:
   schema_id: terra_chuim
-  name: "地球拼音・註音 ₀.₇"
-  version: "0.7"
+  name: "地球拼音・註音 ₁.₀"
+  version: "1.0"
   author:
     - Patrick <ipatrickmac@gmail.com>
+    - 佛振 <chen.sst@gmail.com>
+    - 叔寍 <coywjs@gmail.com>
   description:
     由地球拼音改造而成的註音輸入方案(QWERTY佈局)
     詞庫及聲調輸入方法與地球拼音相同
@@ -16,6 +18,9 @@ schema:
     北京官話註音（ㄅㄟˇ ㄐㄧㄥˉ ㄍㄨㄢˉ ㄏㄨㄚˋ ㄓㄨˋ ㄧㄣˉ）
     兼容au=ao, ung=ong
     支持0.9.20之後rime的symbols
+    支持多種用字標準
+  dependencies:
+    - stroke
 
 switches:
   - name: ascii_mode
@@ -23,8 +28,13 @@ switches:
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: simplification
-    states: [ 傳統, 簡化 ]
+#  - name: simplification
+#    states: [ 傳統, 簡化 ]
+  - options: [ zh_trad, dzing, nippon ]
+    states:
+      - 字形 → 傳統漢字
+      - 字形 → 叔寍正體
+      - 字形 → 日本新字形
     reset: 0
 
 engine:
@@ -46,11 +56,12 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - r10n_translator
-    #- echo_translator
+    - table_translator@custom_phrase
     - reverse_lookup_translator
+    - script_translator
   filters:
-    - simplifier
+    - simplifier@dzing
+    - simplifier@nippon
     - uniquifier
 
 speller:
@@ -144,12 +155,22 @@ translator:
     - xform/eh\d?/ê/
     - xform/([a-z]+)\d/$1/
 
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+
 reverse_lookup:
-  dictionary: luna_pinyin
+  dictionary: stroke
+  enable_completion: true
   prefix: "`"
-  tips: 〔朙月拼音〕
+  suffix: "'"
+  tips: 〔筆畫〕
   preedit_format:
-    - xform/([nljqx])v/$1ü/
+    - xlit/hspnz/一丨丿丶乙/
   comment_format:
     - xform/([zcsr]h?)i/$1/
     - xform/([zcs])h/\U$1/
@@ -186,10 +207,16 @@ reverse_lookup:
     - 'xlit|:;,|--<|'
     - 'xlit|bpmfdtnlgkhjqxZCSʐzcsiuYRaoeɛæAWOMNGK-/<\|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥˉˊˇˋ|'
 
-simplifier:
-  opencc_config: 
-  option_name: 
-    
+dzing:
+  option_name: dzing
+  opencc_config: dzing.ini
+  tips: all
+
+nippon:
+  option_name: nippon
+  opencc_config: nippon.ini
+  tips: all
+
 punctuator:
   import_preset: symbols
 
@@ -205,10 +232,12 @@ key_binder:
     #- { when: composing, accept: Return, send: Shift+Return }
 
 recognizer:
-  import_preset: default
   patterns:
+    email: "^[a-z][-_.0-9a-z]*@.*$"
+    uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp:|mailto:).*$"
     reverse_lookup: "`[a-z]*'?$"
-    punct: '^/[a-z]*$'
+    punct: '^/([A-Z|a-z]*|[0-9]|10)$'
 
 style:
   font_face: "Meiryo"
