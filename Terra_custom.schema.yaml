@@ -1,4 +1,4 @@
-﻿# Rime schema
+# Rime schema
 # encoding: utf-8
 
 schema:
@@ -6,7 +6,7 @@ schema:
   name: 地球拼音・自分流 ₀.₈
   version: "0.8"
   author:
-    - Patrick <ipatrickmac@gmail.com>
+    - Patrick <ipatrickmac@me.com>
   description: |
     由地球拼音改造而成的拼音輸入方案
     詞庫及聲調輸入方法與地球拼音相同
@@ -197,7 +197,7 @@ recognizer:
   patterns:
     reverse_lookup: "`[a-z]*'?$"
     punct: '^/[a-z]*$'
-    
+
 abc_segmentor:
   extra_tags:
     - reverse_lookup
