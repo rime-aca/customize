@@ -4,12 +4,20 @@ CUSTOMIZE
   著重介紹如何自定義「偏好用字」。
 
 ========
-自定義偏好用字 v0.8
+自定義偏好用字 v1.0
+
+ - V0.9, 1.0更新內容
+
+	1. nippon_variants已基本定形。
+
+	2. 「地球拼音·註音/靖/日本」三方案大合併。保留「地球拼音·註音」之名，其餘兩方案作爲用字標準參與其中。
+
+	3. 「明月拼音·靖」同理，合併入「明月拼音·威妥瑪」中。見https://github.com/rime-aca/schemata/tree/master/luna_wade_giles
 
  - V0.8更新內容
 
 	1. dzing_variants與nippon_variants採用瑾昀開發的新語法，替換後原字不消失
-	
+
 	2. 日本字表默認註銷掉Ext-B區以後的字符
 
 	3. 精簡custom_variants
@@ -17,7 +25,7 @@ CUSTOMIZE
  - V0.7更新內容
 
 	1. 新增terra_dzing及luna_dzing方案（基於明月、墬球拼音改造而成）
-	
+
 	2. 修正其他現有方案若干bug，竝將方案id統一改爲小寫
 
 	3. terra_nippon更新至0.9，移除個人偏好設置，以適用於更多用戶
@@ -69,16 +77,16 @@ CUSTOMIZE
 ========
 使用方㳒：
 ========
-1. 	
+1.
 	將custom.ini與custom_variants.txt放入：程序文件夾\data\opencc
 
-	以windows 7 64bit爲例 
+	以windows 7 64bit爲例
 
 	C:\Program Files (x86)\Rime\weasel-0.9.22\data\opencc
 
 	方案文件則放入用戶文件夾（卽%appdata%\rime）中
 
-2. 	
+2.
 	打開要進行偏好用字替換旳方案
 
 	如：luna_pinyin.schema.yaml
