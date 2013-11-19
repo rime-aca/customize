@@ -242,4 +242,4 @@ recognizer:
     punct: '^/([A-Z|a-z]*|[0-9]|10)$'
 
 style:
-  font_face: "Meiryo"
+  font_face: "sin mienglan"
