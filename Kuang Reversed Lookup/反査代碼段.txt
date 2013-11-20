@@ -1,0 +1,273 @@
+#請將如下兩段代碼黏帖到欲變更輸入方案旳相應位寘
+
+engine:
+  filters:
+    - reverse_lookup_filter@kuangh
+
+kuangh:
+  tags: [ abc ]
+  dictionary: kuangh_revlook
+  comment_format:
+    - xform/(^|[ '])01/$1幫/
+    - xform/(^|[ '])02/$1並/
+    - xform/(^|[ '])03/$1昌/
+    - xform/(^|[ '])04/$1常/
+    - xform/(^|[ '])05/$1徹/
+    - xform/(^|[ '])06/$1澄/
+    - xform/(^|[ '])07/$1崇/
+    - xform/(^|[ '])08/$1初/
+    - xform/(^|[ '])09/$1船/
+    - xform/(^|[ '])10/$1從/
+    - xform/(^|[ '])11/$1定/
+    - xform/(^|[ '])12/$1端/
+    - xform/(^|[ '])13/$1見/
+    - xform/(^|[ '])14/$1精/
+    - xform/(^|[ '])15/$1來/
+    - xform/(^|[ '])16/$1明/
+    - xform/(^|[ '])17/$1泥/
+    - xform/(^|[ '])18/$1滂/
+    - xform/(^|[ '])19/$1淸/
+    - xform/(^|[ '])20/$1群/
+    - xform/(^|[ '])21/$1孃/
+    - xform/(^|[ '])22/$1日/
+    - xform/(^|[ '])23/$1生/
+    - xform/(^|[ '])24/$1書/
+    - xform/(^|[ '])25/$1俟/
+    - xform/(^|[ '])26/$1透/
+    - xform/(^|[ '])27/$1溪/
+    - xform/(^|[ '])28/$1匣/
+    - xform/(^|[ '])29/$1曉/
+    - xform/(^|[ '])30/$1邪/
+    - xform/(^|[ '])31/$1心/
+    - xform/(^|[ '])32/$1疑/
+    - xform/(^|[ '])33/$1以/
+    - xform/(^|[ '])34/$1影/
+    - xform/(^|[ '])35/$1云/
+    - xform/(^|[ '])36/$1章/
+    - xform/(^|[ '])37/$1知/
+    - xform/(^|[ '])38/$1莊/
+    - xform/aa//
+    - xform/ab/\*/
+    - xform/ba/合/
+    - xform/bb/合\*/
+    - xform/001/產/
+    - xform/002/車/
+    - xform/003/襯/
+    - xform/004/代/
+    - xform/005/宕/
+    - xform/006/蕩/
+    - xform/007/德/
+    - xform/008/登/
+    - xform/009/等/
+    - xform/010/嶝/
+    - xform/011/冬/
+    - xform/012/東/
+    - xform/013/董/
+    - xform/014/湩/
+    - xform/015/隊/
+    - xform/016/鐸/
+    - xform/017/廢/
+    - xform/018/乏/
+    - xform/019/凡/
+    - xform/020/范/
+    - xform/021/梵/
+    - xform/022/敢/
+    - xform/023/感/
+    - xform/024/戈/
+    - xform/025/歌/
+    - xform/026/哿/
+    - xform/027/箇/
+    - xform/028/庚/
+    - xform/029/耕/
+    - xform/030/耿/
+    - xform/031/梗/
+    - xform/032/卦/
+    - xform/033/怪/
+    - xform/034/果/
+    - xform/035/過/
+    - xform/036/海/
+    - xform/037/駭/
+    - xform/038/寒/
+    - xform/039/鬫/
+    - xform/040/旱/
+    - xform/041/翰/
+    - xform/042/豪/
+    - xform/043/晧/
+    - xform/044/號/
+    - xform/045/合/
+    - xform/046/曷/
+    - xform/047/紇/
+    - xform/048/盍/
+    - xform/049/痕/
+    - xform/050/很/
+    - xform/051/恨/
+    - xform/052/侯/
+    - xform/053/厚/
+    - xform/054/候/
+    - xform/055/桓/
+    - xform/056/緩/
+    - xform/057/換/
+    - xform/058/灰/
+    - xform/059/賄/
+    - xform/060/混/
+    - xform/061/魂/
+    - xform/062/慁/
+    - xform/063/緝/
+    - xform/064/祭/
+    - xform/065/霽/
+    - xform/066/佳/
+    - xform/067/襉/
+    - xform/068/諫/
+    - xform/069/鑑/
+    - xform/070/江/
+    - xform/071/講/
+    - xform/072/絳/
+    - xform/073/皆/
+    - xform/074/勁/
+    - xform/075/濜/
+    - xform/076/京/
+    - xform/077/徑/
+    - xform/078/敬/
+    - xform/079/靜/
+    - xform/080/迥/
+    - xform/081/劇/
+    - xform/082/夬/
+    - xform/083/覺/
+    - xform/084/勘/
+    - xform/085/檻/
+    - xform/086/姥/
+    - xform/087/麻/
+    - xform/088/馬/
+    - xform/089/禡/
+    - xform/090/麥/
+    - xform/091/沒/
+    - xform/092/模/
+    - xform/093/末/
+    - xform/094/陌/
+    - xform/095/暮/
+    - xform/096/齊/
+    - xform/097/迄/
+    - xform/098/薺/
+    - xform/099/洽/
+    - xform/100/巧/
+    - xform/101/侵/
+    - xform/102/寢/
+    - xform/103/沁/
+    - xform/104/青/
+    - xform/105/清/
+    - xform/106/阮/
+    - xform/107/山/
+    - xform/108/刪/
+    - xform/109/潸/
+    - xform/110/術/
+    - xform/111/宋/
+    - xform/112/送/
+    - xform/113/咍/
+    - xform/114/泰/
+    - xform/115/覃/
+    - xform/116/談/
+    - xform/117/唐/
+    - xform/118/添/
+    - xform/119/忝/
+    - xform/120/㮇/
+    - xform/121/帖/
+    - xform/122/微/
+    - xform/123/尾/
+    - xform/124/未/
+    - xform/125/文/
+    - xform/126/吻/
+    - xform/127/問/
+    - xform/128/沃/
+    - xform/129/屋/
+    - xform/130/物/
+    - xform/131/昔/
+    - xform/132/錫/
+    - xform/133/銑/
+    - xform/134/狎/
+    - xform/135/黠/
+    - xform/136/鎋/
+    - xform/137/仙/
+    - xform/138/先/
+    - xform/139/咸/
+    - xform/140/銜/
+    - xform/141/獮/
+    - xform/142/陷/
+    - xform/143/線/
+    - xform/144/豏/
+    - xform/145/霰/
+    - xform/146/宵/
+    - xform/147/蕭/
+    - xform/148/小/
+    - xform/149/篠/
+    - xform/150/笑/
+    - xform/151/效/
+    - xform/152/嘯/
+    - xform/153/寫/
+    - xform/154/屑/
+    - xform/155/謝/
+    - xform/156/蟹/
+    - xform/157/欣/
+    - xform/158/焮/
+    - xform/159/薛/
+    - xform/160/鞾/
+    - xform/161/嚴/
+    - xform/162/鹽/
+    - xform/163/琰/
+    - xform/164/儼/
+    - xform/165/釅/
+    - xform/166/豔/
+    - xform/167/陽/
+    - xform/168/養/
+    - xform/169/漾/
+    - xform/170/肴/
+    - xform/171/藥/
+    - xform/172/葉/
+    - xform/173/業/
+    - xform/174/隱/
+    - xform/175/影/
+    - xform/176/映/
+    - xform/177/用/
+    - xform/178/幽/
+    - xform/179/尤/
+    - xform/180/有/
+    - xform/181/黝/
+    - xform/182/幼/
+    - xform/183/宥/
+    - xform/184/魚/
+    - xform/185/虞/
+    - xform/186/語/
+    - xform/187/麌/
+    - xform/188/郁/
+    - xform/189/遇/
+    - xform/190/御/
+    - xform/191/元/
+    - xform/192/願/
+    - xform/193/月/
+    - xform/194/眞/
+    - xform/195/臻/
+    - xform/196/軫/
+    - xform/197/震/
+    - xform/198/蒸/
+    - xform/199/拯/
+    - xform/200/諍/
+    - xform/201/證/
+    - xform/202/之/
+    - xform/203/支/
+    - xform/204/脂/
+    - xform/205/職/
+    - xform/206/止/
+    - xform/207/旨/
+    - xform/208/紙/
+    - xform/209/至/
+    - xform/210/志/
+    - xform/211/寘/
+    - xform/212/質/
+    - xform/213/櫛/
+    - xform/214/中/
+    - xform/215/鍾/
+    - xform/216/腫/
+    - xform/217/眾/
+    - xform/218/燭/
+    - xform/219/諄/
+    - xform/220/稕/
+    - xform/221/準/
