@@ -47,9 +47,9 @@ kuangh:
     - xform/(^|[ '])37/$1知/
     - xform/(^|[ '])38/$1莊/
     - xform/aa//
-    - xform/ab/\*/
-    - xform/ba/合/
-    - xform/bb/合\*/
+    - xform/ab/¨/
+    - xform/ba/'/
+    - xform/bb/"/
     - xform/001/產/
     - xform/002/車/
     - xform/003/襯/
