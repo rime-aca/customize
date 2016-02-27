@@ -3,18 +3,21 @@
 
 schema:
   schema_id: terra_custom
-  name: 地球拼音・自分流 ₀.₈
-  version: "0.8"
+  name: 地球拼音・自分流 ₀.₉
+  version: "0.9"    #2016.02.28
   author:
     - Patrick <ipatrickmac@me.com>
   description: |
     由地球拼音改造而成的拼音輸入方案
     詞庫及聲調輸入方法與地球拼音相同
-    可自定義字形替換模式（默認「我流」）
+    可自定義字形替換模式（默認「傳統漢字」）
+    支持Ctrl+Shift+4用字標準快速切換至「日本新字体」
     提示碼c在a, u之歬顯示爲ç
     兼容au=ao, ung=ong, ui=ei(nl後)
-    支持0.9.20之後rime的symbols
-    支持Ctrl+Shift+4用字標準快速切換
+    支持小狼毫0.9.20版之後推出的symbols
+    支持自定義界面字體
+    支持小鍵盤數字選詞
+    支持自定義詞典
 
 switches:
   - name: ascii_mode
@@ -22,9 +25,16 @@ switches:
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: custom
-    states: [ 傳統, 我流 ]
-    reset: 1
+#  - name: simplification
+#    states: [ 傳統, 簡化 ]
+  - options: [ zh_trad, dzing, nippon, zht2zhs, custom ]
+    states:
+      - 字形 → 傳統漢字
+      - 字形 → 叔寍正體
+      - 字形 → 日本新字体
+      - 字形 → 大陆简化字
+      - 字形 → 我流
+    reset: 0
 
 engine:
   processors:
@@ -45,11 +55,15 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - table_translator@custom_phrase
     - r10n_translator
     - echo_translator
     - reverse_lookup_translator
   filters:
-    - simplifier
+    - simplifier@dzing
+    - simplifier@nippon
+    - simplifier@zht2zhs
+    - simplifier@custom
     - uniquifier
 
 speller:
@@ -145,6 +159,14 @@ translator:
     - xform/eh\d?/ê/
     - xform/([a-z]+)\d/$1/
 
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+
 reverse_lookup:
   dictionary: luna_pinyin
   enable_completion: true
@@ -155,10 +177,25 @@ reverse_lookup:
   comment_format:
     - "xlit|zyxwvutsrqponmlkjihgfedcba01234|"
 
-simplifier:
-  opencc_config: custom.ini
+dzing:
+  option_name: dzing
+  opencc_config: dzing.ini
+  tips: all
+
+nippon:
+  option_name: nippon
+  opencc_config: nippon.ini
+  tips: all
+
+zht2zhs:
+  option_name: zht2zhs
+  opencc_config: zht2zhs.ini
+  tips: all
+
+custom:
   option_name: custom
-  tip: all
+  opencc_config: custom.ini
+  tips: all
 
 punctuator:
   import_preset: symbols
@@ -189,18 +226,21 @@ key_binder:
     - { when: has_menu, accept: equal, send: equal }
     - { when: has_menu, accept: period, send: period }
     #- { when: composing, accept: Return, send: Shift+Return }
-    - { when: always, accept: Control+Shift+4, toggle: custom }
-    - { when: always, accept: Control+Shift+dollar, toggle: custom }
+    - { when: always, accept: Control+Shift+4, toggle: nippon }
+    - { when: always, accept: Control+Shift+dollar, toggle: nippon }
 
 recognizer:
-  import_preset: default
   patterns:
+    email: "^[a-z][-_.0-9a-z]*@.*$"
+    uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp:|mailto:).*$"
     reverse_lookup: "`[a-z]*'?$"
-    punct: '^/[a-z]*$'
+    punct: '^/([A-Z|a-z]*|[0-9]|10)$'
 
 abc_segmentor:
   extra_tags:
     - reverse_lookup
 
 style:
-  font_face: "Meiryo"
+  font_face: "Typography Old P Medium"
+
