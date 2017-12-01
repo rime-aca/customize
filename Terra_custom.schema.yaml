@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_custom
   name: 地球拼音・自分流 ₀.₉
-  version: "0.9"    #2016.02.28
+  version: "1.0"    #2017-12-2
   author:
     - Patrick <ipatrickmac@me.com>
   description: |
@@ -83,7 +83,6 @@ speller:
     - derive/ao/oa/
     - derive/ao/au/
     - derive/ong/ung/
-    - derive/([nl])ei/$1ui/
     - derive/([aeiou])ng/$1gn/
     - derive/([iu])a(o|ng?)/a$1$2/
     - derive/^([a-z]+)\d$/$1/
@@ -99,8 +98,10 @@ translator:
   dictionary: terra_pinyin
   spelling_hints: 9
   preedit_format:
-    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
-    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
+    - xform (o)(ng)([-;/<,>\\]?) u$3$2
+    - 'xform ([aeiu])(ng?|r)([-;/<,>\\]) $1$3$2'
+    - xform (a)(o)([-;/<,>\\]?) $1$3u
+    - 'xform ([aeo])([iu])([-;/<,>\\]) $1$3$2'
     - 'xform c([aou]) ç$1'
     - 'xform a[-;] ā'
     - 'xform a/ á'
@@ -243,4 +244,3 @@ abc_segmentor:
 
 style:
   font_face: "Typography Old P Medium"
-
