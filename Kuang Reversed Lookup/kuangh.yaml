@@ -1,8 +1,14 @@
-#請將如下兩段代碼黏帖到欲變更輸入方案旳相應位寘
+# Usage:
+# cat <<END >luna_pinyin.custom.yaml
+# patch:
+#   __include: kuangh:/patch
+# END
 
-engine:
-  filters:
+patch:
+  engine/filters/+:
     - reverse_lookup_filter@kuangh
+  kuangh:
+    __include: kuangh
 
 kuangh:
   tags: [ abc ]
